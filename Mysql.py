@@ -22,7 +22,7 @@ class Mysql:
 
     def insert(self, values):
         query = (
-            "INSERT INTO dados (valor, espacoMemoria, tempoExecucao) VALUES (%s, %s, %s)"
+            "INSERT INTO dados (valor, espacoMemoria, tempoExecucao, dataHora) VALUES (%s, %s, %s, %s)"
         )
         try:
             print('Inserindo Valores')

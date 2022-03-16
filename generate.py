@@ -1,4 +1,4 @@
-from datetime import datetime
+import datetime as dt
 from sys import getsizeof
 
 
@@ -14,16 +14,19 @@ def get_data_ranges() -> tuple:
 
 def append_data(data: tuple) -> list:
     dados = []
+    aux = 0
     for range_data in data:
         memory_accumulator = 0
+        aux += 1
         for value in range_data:
-            inicio = datetime.now()
+            inicio = dt.datetime.now()
             acumulador = 0
             for i in range(value, 0, -1):
                 acumulador += i
             memory_accumulator += getsizeof(value)
-            duracao = datetime.now() - inicio
-            dados.append((value, memory_accumulator, duracao.microseconds))
+            duracao = dt.datetime.now() - inicio
+            dados.append(
+                (value, memory_accumulator, duracao.microseconds, dt.datetime.now() + dt.timedelta(days=aux)))
     return dados
 
 
