@@ -19,7 +19,7 @@ def make_insert():
               [sg.Button('Inserir'), sg.Button('Voltar para Pagina Inicial')],
               [sg.ProgressBar(sum([len(element) for element in generate.get_data_ranges()]), orientation='h',
                               size=(20, 20), key='progressbarInsert')]]
-    return sg.Window('Truncate All', layout, location=(800, 600), finalize=True)
+    return sg.Window('Insert All', layout, location=(800, 600), finalize=True)
 
 
 def make_truncate():

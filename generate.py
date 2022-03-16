@@ -14,8 +14,8 @@ def get_data_ranges() -> tuple:
 
 def append_data(data: tuple) -> list:
     dados = []
-    memory_accumulator = 0
     for range_data in data:
+        memory_accumulator = 0
         for value in range_data:
             inicio = datetime.now()
             acumulador = 0
